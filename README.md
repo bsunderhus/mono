@@ -1,2 +1,1 @@
-# mono
-monography
+# Monography
