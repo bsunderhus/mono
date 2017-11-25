@@ -16,6 +16,10 @@ As decentralized as it seems what context truly is, categorizing it presents to 
 
 blank
 
+## Context Awareness
+
+blank
+
 ### References
 
 Abowd, Gregory D., et al. "Towards a better understanding of context and context-awareness." International Symposium on Handheld and Ubiquitous Computing. Springer Berlin Heidelberg, 1999.

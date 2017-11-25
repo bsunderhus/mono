@@ -1,0 +1,317 @@
+%% abtex2-modelo-projeto-pesquisa.tex, v-1.7.1 laurocesar
+%% Copyright 2012-2013 by abnTeX2 group at http://abntex2.googlecode.com/ 
+%%
+%% This work may be distributed and/or modified under the
+%% conditions of the LaTeX Project Public License, either version 1.3
+%% of this license or (at your option) any later version.
+%% The latest version of this license is in
+%%   http://www.latex-project.org/lppl.txt
+%% and version 1.3 or later is part of all distributions of LaTeX
+%% version 2005/12/01 or later.
+%%
+%% This work has the LPPL maintenance status `maintained'.
+%% 
+%% The Current Maintainer of this work is the abnTeX2 team, led
+%% by Lauro César Araujo. Further information are available on 
+%% http://abntex2.googlecode.com/
+%%
+%% This work consists of the files abntex2-modelo-projeto-pesquisa.tex
+%% and abntex2-modelo-references.bib
+%%
+
+% ------------------------------------------------------------------------
+% ------------------------------------------------------------------------
+% abnTeX2: Modelo de Projeto de pesquisa em conformidade com 
+% ABNT NBR 15287:2011 Informação e documentação - Projeto de pesquisa -
+% Apresentação 
+% ------------------------------------------------------------------------ 
+% ------------------------------------------------------------------------
+
+\documentclass[
+	% -- opções da classe memoir --
+	12pt,				% tamanho da fonte
+	openright,			% capítulos começam em pág ímpar (insere página vazia caso preciso)
+	twoside,			% para impressão em verso e anverso. Oposto a oneside
+	a4paper,			% tamanho do papel. 
+	% -- opções da classe abntex2 --
+	%chapter=TITLE,		% títulos de capítulos convertidos em letras maiúsculas
+	%section=TITLE,		% títulos de seções convertidos em letras maiúsculas
+	%subsection=TITLE,	% títulos de subseções convertidos em letras maiúsculas
+	%subsubsection=TITLE,% títulos de subsubseções convertidos em letras maiúsculas
+	% -- opções do pacote babel --
+	english,			% idioma adicional para hifenização
+	french,				% idioma adicional para hifenização
+	spanish,			% idioma adicional para hifenização
+	brazil,				% o último idioma é o principal do documento
+	]{abntex2}
+
+% ---
+% PACOTES
+% ---
+
+% ---
+% Pacotes fundamentais 
+% ---
+\usepackage{cmap}				% Mapear caracteres especiais no PDF
+\usepackage{lmodern}			% Usa a fonte Latin Modern
+\usepackage[T1]{fontenc}		% Selecao de codigos de fonte.
+\usepackage[utf8]{inputenc}		% Codificacao do documento (conversão automática dos acentos)
+\usepackage{indentfirst}		% Indenta o primeiro parágrafo de cada seção.
+\usepackage{color}				% Controle das cores
+\usepackage{graphicx}			% Inclusão de gráficos
+% ---
+
+% ---
+% Pacotes adicionais, usados apenas no âmbito do Modelo Canônico do abnteX2
+% ---
+\usepackage{lipsum}				% para geração de dummy text
+% ---
+
+% ---
+% Pacotes de citações
+% ---
+\usepackage[brazilian,hyperpageref]{backref}	 % Paginas com as citações na bibl
+\usepackage[alf]{abntex2cite}	% Citações padrão ABNT
+
+% --- 
+% CONFIGURAÇÕES DE PACOTES
+% --- 
+
+% ---
+% Configurações do pacote backref
+% Usado sem a opção hyperpageref de backref
+\renewcommand{\backrefpagesname}{Citado na(s) página(s):~}
+% Texto padrão antes do número das páginas
+\renewcommand{\backref}{}
+% Define os textos da citação
+\renewcommand*{\backrefalt}[4]{
+	\ifcase #1 %
+		Nenhuma citação no texto.%
+	\or
+		Citado na página #2.%
+	\else
+		Citado #1 vezes nas páginas #2.%
+	\fi}%
+% ---
+
+% ---
+% Informações de dados para CAPA e FOLHA DE ROSTO
+% ---
+\titulo{Investigação de DURA como linguagem para definição de cenários de aplicações sensíveis ao contexto para execução em ambientes CEP}
+\autor{Bernardo Sunderhus}
+\local{Vitória}
+\data{Julho 2017}
+\instituicao{Universidade Federal do Espirito Santo
+    \par
+    \textbf{Orientadora: Profª Drª Patricia Dockhorn Costa}
+}
+\tipotrabalho{Projeto (Graduação)}
+% O preambulo deve conter o tipo do trabalho, o objetivo, 
+% o nome da instituição e a área de concentração 
+\preambulo{Ante projeto apresentado para
+obtenção do grau de bacharel em Ciência da Computação
+pela Universidade Federal do Espírito Santo.
+}
+% ---
+
+% ---
+% Configurações de aparência do PDF final
+
+% alterando o aspecto da cor azul
+\definecolor{blue}{RGB}{41,5,195}
+
+% informações do PDF
+\makeatletter
+\hypersetup{
+     	%pagebackref=true,
+		pdftitle={\@title}, 
+		pdfauthor={\@author},
+    	pdfsubject={\imprimirpreambulo},
+	    pdfcreator={LaTeX with abnTeX2},
+		pdfkeywords={abnt}{latex}{abntex}{abntex2}{projeto de pesquisa}, 
+		colorlinks=true,       		% false: boxed links; true: colored links
+    	linkcolor=blue,          	% color of internal links
+    	citecolor=blue,        		% color of links to bibliography
+    	filecolor=magenta,      		% color of file links
+		urlcolor=blue,
+		bookmarksdepth=4
+}
+\makeatother
+% --- 
+
+% --- 
+% Espaçamentos entre linhas e parágrafos 
+% --- 
+
+% O tamanho do parágrafo é dado por:
+\setlength{\parindent}{1.3cm}
+
+% Controle do espaçamento entre um parágrafo e outro:
+\setlength{\parskip}{0.2cm}  % tente também \onelineskip
+
+% ---
+% compila o indice
+% ---
+\makeindex
+% ---
+
+% ----
+% Início do documento
+% ----
+\begin{document}
+
+% Retira espaço extra obsoleto entre as frases.
+\frenchspacing 
+
+% ----------------------------------------------------------
+% ELEMENTOS PRÉ-TEXTUAIS
+% ----------------------------------------------------------
+% \pretextual
+
+% ---
+% Capa
+% ---
+\imprimircapa
+% ---
+
+% ---
+% Folha de rosto
+% ---
+\imprimirfolhaderosto
+% ---
+
+% ----------------------------------------------------------
+% Introdução
+% ----------------------------------------------------------
+\chapter*[Introdução]{Introdução}
+\addcontentsline{toc}{chapter}{Introdução}
+% (onde?)
+
+Nos dias atuais podemos encontrar microprocessadores embutidos em praticamente qualquer objeto, de computadores pessoais a móveis e mobilhas, além de diversas outras tecnologias. Com a expansão da Internet, todos os dispositivos encontram-se, de alguma forma, conectados. A sensação de que está tudo conectado a todo o momento deu origem ao conceito de \textit{Computação Pervasiva} \cite{juan-2010}.
+
+A Computação Pervasiva incorpora a visão de processadores perfeitamente integrados ao cotidiano, interagindo com informações providas por sensores de forma transparente ao usuário. Com a ajuda dessas entidades, um sistema de Computação Pervasivo provê serviço exclusivo a usuários de forma contextual. Tais sistemas ricos em informações contextuais são denominados Sistemas Sensíveis ao Contexto \cite{dockhorn-2007}. Onde "Contexto é qualquer informação que possa ser usada para caracterizar a situação de uma entidade. Uma entidade é uma pessoa, lugar ou objeto considerado relevante para a interação entre usuário e uma aplicação, incluindo o próprio usuário e a própria aplicação"\cite{abowd-1999}. Essas aplicações (ou sistemas) normalmente estão interessadas não apenas nos valores associados ao contexto, mas no significado que este valor pode representar, como um estado de interesse da aplicação sensível ao contexto. A este significado atribui-se o nome de \textit{Situação} \cite{dockhorn-2007}.
+% * <patriciadockhorncosta@gmail.com> 2017-08-03T17:02:24.358Z:
+% 
+% >  forma contextual
+% também não fica claro o que isto quer dizer, neste momento (conceito de contexto ainda não foi introduzido)
+% 
+% ^.
+% * <patriciadockhorncosta@gmail.com> 2017-08-03T17:00:24.040Z:
+% 
+% > exclusivo a 
+% O que vc quer dizer com "exclusivo"? Não está claro!
+% 
+% ^ <patriciadockhorncosta@gmail.com> 2017-08-03T17:01:05.873Z.
+
+O conceito de Situação permite criar abstrações sobre padrões de interesse, evitando assim a perda de tempo em lidar com a coleta de dados em si. Assume-se que por estar num ambiente pervasivo o dado, de alguma forma, será provido. É possível então concentrar-se em declarações de o que as coisas são e em que estados elas se encontram a partir desses dados disponíveis (ex. a temperatura de uma determinada pessoa pode indicar a situação estar com febre).
+% * <patriciadockhorncosta@gmail.com> 2017-08-03T17:09:39.187Z:
+% 
+% > É possível então concentrar-se em declarações de o que as coisas são e em que estados elas se encontram a partir desses dados disponíveis (ex. a temperatura de uma determinada pessoa pode indicar a situação estar com febre).
+% acho que pode ficar melhor isso aqui... está simplificado demais! e muito informal também...
+% 
+% ^.
+% * <patriciadockhorncosta@gmail.com> 2017-08-03T17:07:57.384Z:
+% 
+% > Assume-se que por estar num ambiente pervasivo o dado, de alguma forma, será provido
+% Achei isso aqui muito "forte"... qual é o objetivo de colocar isso aqui?
+% 
+% ^.
+% * <patriciadockhorncosta@gmail.com> 2017-08-03T17:04:14.669Z:
+% 
+% >  a perda de tempo 
+% Termo muito informal. Sugiro explicar de maneira mais técnica...
+% 
+% ^.
+
+Em paralelo, com o surgimento de ambientes com um volume impressionante de dados sensoriais, sistemas de CEP (\textit{Complex Event Processing}) foram surgindo para tentar solucionar problema de detecção de padrões. Sistemas de CEP provêm mecanismos para declaração e identificação de eventos complexos. Normalmente, especificações de padrões de eventos (simples ou complexos) são escritas em uma linguagem chamada EPL (\textit{Event Processing Language}) \cite{etzion-2010}.
+% * <patriciadockhorncosta@gmail.com> 2017-08-03T17:11:40.553Z:
+% 
+% > declaração e identificação
+% Muito mais do que isso....
+% 
+% ^.
+
+Em geral, EPLs utilizadas em sistemas de CEP não possuem construções específicas de domínio, consistindo em linguagens de propósitos gerais \cite{bruns-2014}. A utilização de construções de propósitos gerais em EPL, a fim de permitir independência entre domínios, leva a construção de padrões mais extensos e complexos, trazendo desvantagens como: (i) perda de expressividade; (ii) falta de escritabilidade e (iii) falta de legibilidade, dentre outros. Desenvolvedores devem passar por uma curva de aprendizado a fim de explorar todas as funcionalidades disponíveis na EPL correspondente. Por vezes, especialistas do domínio, ou seja, aqueles que possuem conhecimento a respeito dos padrões de interesse, não possuem o conhecimento técnico desejado para representar os padrões de interesse, por meio de uma EPL, no sistema CEP utilizado.
+% * <patriciadockhorncosta@gmail.com> 2017-08-03T17:14:26.796Z:
+% 
+% > Desenvolvedores devem passar por uma curva de aprendizado a fim de explorar todas as funcionalidades disponíveis na EPL correspondente. Por vezes, especialistas do domínio, ou seja, aqueles que possuem conhecimento a respeito dos padrões de interesse, não possuem o conhecimento técnico desejado para representar os padrões de interesse, por meio de uma EPL, no sistema CEP utilizado.
+% Aqui temos uma oportunidade única para citar o projeto do Rafael (mostrou muito claramente as dificuldades de especificar situações (domínio mais específico) em EPL's
+% 
+% ^.
+
+% <<Texto incompleto aqui. Faltou contextualizar Drools e SCENE...>>
+
+\chapter{Motivação} % (por que?)
+
+Ao lidar com o ambiente \textbf{scene} \cite{pereira-2013}, que é atualmente  vinculado com o processamento de regras do ambiente Drools, surgiu a ideia de como seria se fosse possível se desvincular do ambiente Drools. Quais seriam as premissas necessárias para um novo ambiente ser capaz de processar situações e como seria possível fazer isso de uma forma limpa e clara garantindo o menor atrito possível na adequação de outros sistemas.
+% * <patriciadockhorncosta@gmail.com> 2017-08-03T17:19:09.714Z:
+% 
+% > limpa e clara 
+% Esses atributos não são fáceis de entender... o que vc gostaria de dizer realmente?  Texto precisa melhorar aqui...
+% 
+% Primeiro vc precisa explicar quais são os problemas do SCENE ser vinculado ao Drools... Depois vc propõe a solução (desvincular de plataformas específicas, ou seja, utilizar conceitos comuns da área de CEP para especificação de situações, sem utilizar construtos específicos de plataformas...
+% 
+% 
+% 
+% 
+% ^.
+% * <patriciadockhorncosta@gmail.com> 2017-08-03T17:15:43.263Z:
+% 
+% > scene
+% Não é com letra maiúscula? SCENE?
+% 
+% ^.
+
+Adendo o fato do alto número de sistemas CEPs surgiu-se a ideia de analisar o provável elo entre o atual ambiente do \textbf{scene} com o modelo decorrente dos CEPs modernos.
+% * <patriciadockhorncosta@gmail.com> 2017-08-03T17:24:33.932Z:
+% 
+% > Adendo o fato do alto número de sistemas CEPs surgiu-se a ideia de analisar o provável elo entre o atual ambiente do \textbf{scene} com o modelo decorrente dos CEPs modernos.
+% Não entendi muito bem isso aqui. Acho que ficou fora de contexto...
+% 
+% ^.
+
+\chapter{Objetivos} % (o que?)
+
+Este projeto tem como objetivo prover um ambiente de gerenciamento de situações para sistemas CEPs, que sejam desvinculados de plataformas específicas. Tais sistemas são propensos a analise, detecção e criação de eventos, porém o mesmo não é equivalente para situações e também não é fácil encontrar uma linguagem que defina bem um modelo independente de tais sistemas, sendo assim, uma tarefa árdua se desvincular caso necessário.
+% * <patriciadockhorncosta@gmail.com> 2017-08-03T17:38:01.253Z:
+% 
+% > Tais sistemas são propensos a analise, detecção e criação de eventos, porém o mesmo não é equivalente para situações e também não é fácil encontrar uma linguagem que defina bem um modelo independente de tais sistemas, sendo assim, uma tarefa árdua se desvincular caso necessário.
+% Acho este texto desnecessário... aqui vc deveria colocar as características de tal ambiente: o que ele precisar ter? Quais seriam os requisitos?
+% 
+% ^.
+
+% Metodologia (como?)
+
+Como ponto de partida, será analisada a linguagem de detecção de eventos DURA, que provê um ambiente  \textit{independente de plataforma}, considerando a possibilidade de incorporar a especificação de situações nesta linguagem.
+
+Também será avaliada a possibilidade de transpilação de DURA para DRL (linguagem de especificação de regras em Drools). Caso isso seja possível, como prova de conceito, será definido um cenário de uma Aplicação Sensível a Situação em DURA (ou em possíveis extensões de DURA)
+%e.... 
+% * <patriciadockhorncosta@gmail.com> 2017-08-03T17:56:56.536Z:
+%
+% > RA) e.... 
+%
+% ^.
+
+%quanto em Drools, e 
+% * <patriciadockhorncosta@gmail.com> 2017-08-03T17:46:10.307Z:
+%
+% > transpilação
+%
+% ^.
+% * <patriciadockhorncosta@gmail.com> 2017-08-03T17:42:47.388Z:
+% 
+% > Para concluir 
+% Não acho que isso deva ser a conclusão do seu projeto... 
+% 
+% ^.
+
+
+% ----------------------------------------------------------
+% Referências bibliográficas
+% ----------------------------------------------------------
+\bibliography{bibliography}
+
+\printindex
+
+
+\end{document}
