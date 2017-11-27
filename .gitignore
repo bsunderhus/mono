@@ -1,4 +1,4 @@
-latex/*
-!/latex/*.bib
-!/latex/*.pdf
-!/latex/*.tex
+tex/*
+!/tex/*.bib
+!/tex/*.pdf
+!/tex/*.tex
