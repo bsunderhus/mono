@@ -2,3 +2,4 @@ tex/*
 !/tex/*.bib
 !/tex/*.pdf
 !/tex/*.tex
+.DS_Store
